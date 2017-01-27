@@ -1,11 +1,6 @@
-# Small template project to play around with scala.meta macro annotations
+# A project to test the limits of what can and cant be expanded via macroAnnotations.
 
-To compile and expand the example macro annotation:
+Personally I find it a lot easier to understand when there is practical example of what does and does not work.
+Rather then just reading the docs explicity.
 
-```
-sbt app/run
-```
-
-To learn more about writing macro annotations:
-
-http://scalameta.org/tutorial/#Part4-Macroannotations
+This has also raised a few questions.
