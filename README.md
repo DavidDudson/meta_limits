@@ -4,3 +4,5 @@ Personally I find it a lot easier to understand when there is practical example 
 Rather then just reading the docs explicity.
 
 This has also raised a few questions.
+
+If `sbt compile` works, then the macros are correctly expanding
