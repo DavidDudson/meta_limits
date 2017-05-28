@@ -193,6 +193,10 @@ class withCompanion extends scala.annotation.StaticAnnotation {
         return q"$clazz; $companion"
       case Term.Block((c @ Defn.Class(_, _, _, _, _)) :: (o @ Defn.Object(_, _, _)) :: Nil) =>
         return Term.Block(c :: o :: Nil)
+      case Term.Block((t @ Defn.Type(_)) :: (o @ Defn.Object(_, _, _)) :: Nil) =>
+        return Term.Block(t :: o :: Nil)
+      case a =>
+        abort(a.structure)
     }
   }
 }
