@@ -191,9 +191,8 @@ class withCompanion extends scala.annotation.StaticAnnotation {
       case clazz: Defn.Class =>
         val companion = q"object ${Term.Name(clazz.name.value)}"
         return q"$clazz; $companion"
-      case t: Term.Block =>
-        // This implies that we already have the companion and object
-        return t
+      case Term.Block((c @ Defn.Class(_, _, _, _, _)) :: (o @ Defn.Object(_, _, _)) :: Nil) =>
+        return Term.Block(c :: o :: Nil)
     }
   }
 }
